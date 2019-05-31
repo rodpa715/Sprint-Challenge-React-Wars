@@ -5,12 +5,31 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [],
+      page: 1,
     };
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/?page=1');
+    this.getCharacters(`https://swapi.co/api/people/?page=${this.state.page}`);
+  }
+
+  next = () => {
+    this.componentDidMount();
+    return(
+      this.setState(state => ({
+        page: state.page + 1,
+      }))
+      )
+  }
+
+  subtractOne = () => {
+    this.componentDidMount();
+    return(
+      this.setState(state => ({
+        page: state.page - 1,
+      }))
+    )
   }
 
   getCharacters = URL => {
@@ -22,7 +41,6 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
-        console.log(data)
         this.setState({ starwarsChars: data.results });
       })
       .catch(err => {
@@ -35,7 +53,7 @@ class App extends Component {
       <div className="App">
         <h1 className="Header">React Wars</h1>
           <div className="list-container">
-            <ListContainer charactersArray={this.state.starwarsChars}/>
+            <ListContainer charactersArray={this.state.starwarsChars} next={this.next} prev={this.prev}/>
           </div>
       </div>
     );

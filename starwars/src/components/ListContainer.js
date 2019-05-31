@@ -4,11 +4,11 @@ import CharacterList from "./CharacterList"
 import PaginationComponent from "./PaginationComponent"
 
 export default function ListContainer(props) {
-  const {charactersArray} = props;
+  const {charactersArray, next, prev} = props;
   return(
    <>
       <CharacterList charactersArray={charactersArray}/>
-      <PaginationComponent />
+      <PaginationComponent next={next} prev={prev}/>
    </>
   )
 }
