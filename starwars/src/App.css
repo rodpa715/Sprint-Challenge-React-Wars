@@ -1,5 +1,11 @@
+#root{
+  display: flex;
+  justify-content: center;
+}
 .App {
   text-align: center;
+  width: 100%;
+
 }
 .Header {
   color: #443e3e;
