@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import ListContainer from "./components/ListContainer"
 class App extends Component {
   constructor() {
     super();
@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/');
+    this.getCharacters('https://swapi.co/api/people/?page=1');
   }
 
   getCharacters = URL => {
@@ -22,6 +22,7 @@ class App extends Component {
         return res.json();
       })
       .then(data => {
+        console.log(data)
         this.setState({ starwarsChars: data.results });
       })
       .catch(err => {
@@ -33,6 +34,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+          <div className="list-container">
+            <ListContainer charactersArray={this.state.starwarsChars}/>
+          </div>
       </div>
     );
   }

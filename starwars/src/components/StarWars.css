@@ -1,0 +1,36 @@
+.character-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  width: 100%;
+}
+.character{
+  display: flex;
+  width: 15%;
+  height: 20%;
+  margin: 2rem;
+  padding: 1rem;
+  background-color: rgba(151, 150, 139, 0.7);
+  border-radius: 0.5rem;
+  transition: transform 1s;
+}
+.character:hover{
+  transform: scale(1.15);
+  transition: transform 1s;
+}
+.info{
+  width: 100%;
+  white-space: nowrap;
+}
+.info.key{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.info.value{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
