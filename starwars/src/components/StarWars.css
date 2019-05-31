@@ -11,7 +11,7 @@
   height: 20%;
   margin: 2rem;
   padding: 1rem;
-  background-color: rgba(151, 150, 139, 0.7);
+  background-color: rgba(250, 196, 103, 0.6);
   border-radius: 0.5rem;
   transition: transform 1s;
 }
@@ -33,4 +33,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+.list-container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.pagination{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+.fas{
+  font-size: 3.2rem;
+  background-color: rgba(219, 229, 238, 0.55);
+  color: grey;
+  box-shadow: inset 0rem 0rem 0rem 0.2rem grey;
+  border-radius: 50%;
+  cursor: pointer;
 }
