@@ -11,7 +11,9 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getCharacters(`https://swapi.co/api/people/?page=${this.state.page}`);
+    this.setState(state => (
+      this.getCharacters(`https://swapi.co/api/people/?page=${state.page}`)
+    ))
   }
 
   next = () => {
@@ -23,7 +25,7 @@ class App extends Component {
       )
   }
 
-  subtractOne = () => {
+  prev = () => {
     this.componentDidMount();
     return(
       this.setState(state => ({
